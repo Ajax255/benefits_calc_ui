@@ -1,19 +1,27 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <pie-chart :data="chartData"></pie-chart>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+
+      chartData: {
+
+        '2017-05-13': 2,
+        '2017-05-14': 3,
+        '2017-05-15': 10,
+      },
+    };
+  },
+};
 </script>
 
 <style>
