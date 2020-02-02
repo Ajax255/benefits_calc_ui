@@ -6,8 +6,6 @@
 </template>
 
 <script>
-
-
 export default {
   name: 'app',
   data() {
@@ -17,7 +15,7 @@ export default {
 
         '2017-05-13': 2,
         '2017-05-14': 3,
-        '2017-05-15': 10,
+        '2017-05-15': 2,
       },
     };
   },
