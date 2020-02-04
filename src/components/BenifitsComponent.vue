@@ -1,18 +1,20 @@
 <template>
-    <div class='shadow-background'>
-        <div class='shadow-two-background'>
-            <table class='shadow-three-background'>
-                <tr class='doc-header'>
+    <div class="shadow-background">
+        <div class="shadow-two-background">
+            <table class="shadow-three-background">
+                <tr class="doc-header">
                     <td class="td-left">
-                        <img class='wright-logo' alt="Wright State Logo" src="../assets/02_WRIGHTSTATE_BIPLANE_N_FULL.jpg"/>  
+                        <img class="wright-logo" alt="Wright State Logo" src="../assets/02_WRIGHTSTATE_BIPLANE_N_FULL.jpg"/>  
                     </td>    
-                    <td class='td-right total-comp'>
-                        <p>Total Compensation Statement<br/>Full-time staff (.75FTE or Greater)<br/>Estimate & Illustrative of Approximate Salary</p>
+                    <td class="td-right total-comp">
+                        <span style="color:#026937">Total Compensation Statement<br/></span> 
+                        <span style="color:#CEA052">staff (.75FTE or Greater)<br/></span>
+                        <span style="color:#026937">Estimate & Illustrative of Approximate Salary</span>
                     </td>
                 </tr>
-                <tr class='benifits-summary'>                     
+                <tr class="benifits-summary">                     
                     <td class="td-left">
-                        <table class='summary-table'>
+                        <table class="summary-table">
                             <tr class="header-green">
                                 <th class="table-column-left" colspan="2">Salary</th>
                             </tr>
@@ -84,11 +86,11 @@
                             </tr>
                         </table>
                     </td> 
-                    <td class='td-right pie-chart'>
+                    <td class="td-right pie-chart">
                         <PieChart></PieChart>
                     </td>  
                 </tr>
-                <tr class='additional-benifits'>
+                <tr class="additional-benifits">
                     <td colspan="2"></td>    
                 </tr>       
             </table>  
@@ -115,7 +117,7 @@
     padding: 10px 10px 10px 10px;
      width: fit-content;
     height: fit-content; 
-    background: #D99132;
+    background: #CEA052;
 }
 .shadow-three-background{
     padding: 10px 10px 10px 10px;
@@ -133,22 +135,21 @@
     padding: 10px 10px 10px 10px;
 }
 .total-comp{ 
-    text-align: left;
+    text-align: center;
     padding: 10px 10px 10px 10px;
-    background: pink;
 }
 .benifits-summary{ 
     min-height: 60%
 }
 .pie-chart{ 
-    background: lightyellow;
+    background: none;
 }
 .summary-table{
     width:100%;
 }
 .additional-benifits{ 
     min-height: 30%;
-    background: lightgray; 
+    background: #F2F1EB; 
 }
 .header-green{
     color: white;
@@ -156,7 +157,7 @@
 }
 .header-orange{
     color: white;
-    background: #D99132;
+    background: #CEA052;
 }
 .td-left{
     width: 70%
