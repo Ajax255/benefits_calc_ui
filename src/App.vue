@@ -1,18 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld></HelloWorld>
-    <PieChart></PieChart>
+    <BenifitsComponent></BenifitsComponent>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import PieChart from "./components/PieChart.vue"
+import BenifitsComponent from "./components/BenifitsComponent.vue";
 
 export default {
   name: 'app',
-  components: {HelloWorld, PieChart}
+  components: {
+    BenifitsComponent,
+  }
 };
 </script>
 
@@ -21,8 +20,6 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+    padding: 10px 10px 10px 10px;
   }
 </style>
