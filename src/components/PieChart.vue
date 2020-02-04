@@ -1,16 +1,16 @@
 <template>
-    <pie-chart :data="chartData"></pie-chart>
+  <div>
+      <pie-chart :data="chartData"></pie-chart>
+  </div> 
 </template>
 
 <script>
 export default {
-  name: 'app',
   data() {
     return {
       chartData: {
-        '2017-05-13': 2,
-        '2017-05-14': 3,
-        '2017-05-15': 2,
+        'Salary': 45000.00,
+        'Benefits': 15802.00
       },
     };
   },
@@ -18,3 +18,4 @@ export default {
 </script>
 
 <style></style>
+
