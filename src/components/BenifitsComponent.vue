@@ -130,8 +130,8 @@
     min-height: 10%;
 }
 .wright-logo{
-    width: 20%;
-    height: 20%;
+    width: 50%;
+    height: auto;
     padding: 10px 10px 10px 10px;
 }
 .total-comp{ 
