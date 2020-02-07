@@ -1,6 +1,6 @@
 <template>
   <div>
-      <chartjs-doughnut v-bind:labels="labels" v-bind:datasets="datasets" v-bind:option="option"></chartjs-doughnut>
+      <chartjs-doughnut v-bind:labels="labels" v-bind:datasets="datasets" v-bind:option="option" width="300" height="300"></chartjs-doughnut>
   </div> 
 </template>
 
@@ -26,8 +26,8 @@ export default {
          text: "Total Compensation",
          
        },
-       maintainAspectRatio: true,
-       responsive: true
+       maintainAspectRatio: false,
+       responsive: false
        
      }
    };

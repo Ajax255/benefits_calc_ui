@@ -86,8 +86,10 @@
                             </tr>
                         </table>
                     </td> 
-                    <td class="td-right pie-chart">
+                    <td class="td-right-pie-chart">
+                        <center>
                         <PieChart></PieChart>
+                        </center>
                     </td>  
                 </tr>
                 <tr class="additional-benifits">
