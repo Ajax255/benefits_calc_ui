@@ -2,6 +2,7 @@
     <div class="shadow-background">
         <div class="shadow-two-background">
             <table class="shadow-three-background">
+                
                 <tr class="doc-header">
                     <td class="td-left">
                         <img class="wright-logo" alt="Wright State Logo" src="../assets/02_WRIGHTSTATE_BIPLANE_N_FULL.jpg"/>  
@@ -84,11 +85,12 @@
                                 <th class="table-column-left">Approximate Total Compensation</th>
                                 <td class="table-column-right">$60,804.00</td>
                             </tr>
+                            <div><json-data>{{jsonData}}</json-data></div>
                         </table>
                     </td> 
                     <td class="td-right-pie-chart">
                         <center>
-                        <PieChart></PieChart>
+                        <pie-chart></pie-chart>
                         </center>
                     </td>  
                 </tr>
@@ -102,9 +104,13 @@
 
 <script>
     import PieChart from "../components/PieChart.vue"
+    import jsonData from "../components/json.vue"
     
     export default {
-        components: { PieChart }
+        components: { 
+            'pie-chart': PieChart, 
+            'json-data': jsonData 
+            }
     }
 </script>
 

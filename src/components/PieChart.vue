@@ -1,6 +1,6 @@
 <template>
   <div>
-      <chartjs-doughnut v-bind:labels="labels" v-bind:datasets="datasets" v-bind:option="option" width="300" height="300"></chartjs-doughnut>
+      <chartjs-doughnut v-bind:labels="labels" v-bind:datasets="datasets" v-bind:option="option" :width=300 :height=300></chartjs-doughnut>
   </div> 
 </template>
 
