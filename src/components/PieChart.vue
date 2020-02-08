@@ -1,43 +1,47 @@
-<template>
-  <div>
-      <chartjs-doughnut v-bind:labels="labels" v-bind:datasets="datasets" v-bind:option="option" :width=300 :height=300></chartjs-doughnut>
-  </div> 
-</template>
-
-
 <script>
+import { Doughnut } from "vue-chartjs";
 
 export default {
-   data(){
-     return{
-       labels: ["Salary", "Benefits"],
-     
-     datasets: [
-       {
-         data: [.74, .26],
-         backgroundColor: ["#026937", "#CEA052"],
-         hoverBackgroundColor: ["#02b55e", "#ffc96e"]
-       }
-     ],
-     option: {
-       title: {
-         display: true,
-         position: "top",
-         text: "Total Compensation",
-         
-       },
-       maintainAspectRatio: false,
-       responsive: false
-       
-     }
-   };
-   }
-  
+  extends: Doughnut,
+  data: () => ({
+    chartdata: {
+      labels: ["Salary", "Benefits", "Dark-Grey", "Gray", "Light-Gray"],
+      datasets: [
+        {
+          data: [0.74, 0.26, 0.15, 0.15, 0.15],
+          backgroundColor: [
+            "#026937",
+            "#cea052",
+            "#666666",
+            "#aaaaaa",
+            "#cccccc"
+          ],
+          label: "Dataset 1"
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      legend: {
+        position: "top"
+      },
+      title: {
+        display: true,
+        position: "top",
+        text: "Total Compensation"
+      },
+      animation: {
+        animateScale: true,
+        animateRotate: true
+      }
+    }
+  }),
+  mounted() {
+    this.renderChart(this.chartdata, this.options);
+  }
 };
 </script>
 
 <style>
-
-
 </style>
 
