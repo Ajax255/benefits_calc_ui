@@ -31,4 +31,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Chart Instructions
 
 See [vue-chartjs Reference](https://vue-chartjs.org/guide/#introduction).
-See [vue-chartjs Reference](https://chartjs.org).
+See [chartjs Reference](https://chartjs.org).
