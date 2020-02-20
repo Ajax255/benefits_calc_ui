@@ -95,7 +95,7 @@
                 <td class="table-column-right">$60,804.00</td>
               </tr>
               <div>
-                <json-data>{{jsonData}}</json-data>
+                <!-- <json-data>{{jsonData}}</!--> -->
               </div>
             </table>
           </td>
@@ -115,12 +115,10 @@
 
 <script>
 import PieChart from "../components/PieChart.vue";
-import jsonData from "../components/json.vue";
 
 export default {
   components: {
     "pie-chart": PieChart,
-    "json-data": jsonData
   }
 };
 </script>
