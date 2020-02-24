@@ -22,7 +22,7 @@
             <span style="color:#026937">Estimate & Illustrative of Approximate Salary</span>
           </td>
         </tr>
-        <tr class="benifits-summary">
+        <tr class="benefits-summary">
           <td class="td-left">
             <table class="summary-table">
               <tr class="header-green">
@@ -105,7 +105,7 @@
             </center>
           </td>
         </tr>
-        <tr class="additional-benifits">
+        <tr class="additional-benefits">
           <td colspan="2"></td>
         </tr>
       </table>
@@ -126,6 +126,14 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (max-width: 700px){
+  .td-left {
+    font-size: 0.75em;
+  }
+  .td-right {
+    font-size: 0.75em;
+  }
+} 
 .shadow-background {
   padding: 13px 13px 13px 13px;
   width: fit-content;
@@ -157,7 +165,7 @@ export default {
   text-align: center;
   padding: 10px 10px 10px 10px;
 }
-.benifits-summary {
+.benefits-summary {
   min-height: 60%;
 }
 .pie-chart {
@@ -166,9 +174,9 @@ export default {
   background: none;
 }
 .summary-table {
-  width: 100%;
+  width: 90%;
 }
-.additional-benifits {
+.additional-benefits {
   min-height: 30%;
   background: #f2f1eb;
 }
@@ -181,10 +189,10 @@ export default {
   background: #cea052;
 }
 .td-left {
-  width: 70%;
+  width: 75%;
 }
 .td-right {
-  width: 30%;
+  width: 25%;
 }
 .table-column-left {
   text-align: left;
