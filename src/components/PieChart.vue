@@ -25,7 +25,8 @@ export default {
       title: {
         display: true,
         position: "top",
-        text: "Total Compensation"
+        text: "Total Compensation",
+        fontSize: 20,
       },
       animation: {
         animateScale: true,
@@ -40,5 +41,11 @@ export default {
 </script>
 
 <style>
+@media only screen and (max-width: 700px){
+  #doughnut-chart {
+    width: 250px;
+    height: 250px;
+  }
+}
 </style>
 
