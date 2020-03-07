@@ -2,10 +2,6 @@
   <div class="shadow-background">
     <div class="shadow-two-background">
       <table class="shadow-three-background">
-        <!-- <div v-for="benefit in benefits" :key="benefit">
-          <H1>{{ benefit.name }}</H1>
-        </div>
-        <button type="button" (click)="fetchBenefits()">Click Me!</button>-->
         <tr class="doc-header">
           <td class="td-left">
             <img
