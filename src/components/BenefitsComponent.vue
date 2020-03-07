@@ -2,6 +2,10 @@
   <div class="shadow-background">
     <div class="shadow-two-background">
       <table class="shadow-three-background">
+        <!-- <div v-for="benefit in benefits" :key="benefit">
+          <H1>{{ benefit.name }}</H1>
+        </div>
+        <button type="button" (click)="fetchBenefits()">Click Me!</button>-->
         <tr class="doc-header">
           <td class="td-left">
             <img
@@ -19,7 +23,9 @@
               staff (.75FTE or Greater)
               <br />
             </span>
-            <span style="color:#026937">Estimate & Illustrative of Approximate Salary</span>
+            <span style="color:#026937"
+              >Estimate & Illustrative of Approximate Salary</span
+            >
           </td>
         </tr>
         <tr class="benefits-summary">
@@ -37,7 +43,9 @@
                 <td class="table-column-right">$45,000.00</td>
               </tr>
               <tr class="header-orange">
-                <th class="table-column-left" colspan="2">Benefits (WSU paid)</th>
+                <th class="table-column-left" colspan="2">
+                  Benefits (WSU paid)
+                </th>
               </tr>
               <tr>
                 <td class="table-column-left">Medical-Single(HDHP)</td>
@@ -64,7 +72,9 @@
                 <td class="table-column-right">$144.00</td>
               </tr>
               <tr>
-                <td class="table-column-left">Accidental Death & Dismemberment</td>
+                <td class="table-column-left">
+                  Accidental Death & Dismemberment
+                </td>
                 <td class="table-column-right">$22.00</td>
               </tr>
               <tr>
@@ -91,11 +101,14 @@
                 <td></td>
               </tr>
               <tr class="header-green">
-                <th class="table-column-left">Approximate Total Compensation</th>
+                <th class="table-column-left">
+                  Approximate Total Compensation
+                </th>
                 <td class="table-column-right">$60,804.00</td>
               </tr>
               <div>
-                <!-- <json-data>{{jsonData}}</!--> -->
+                <!-- <json-data>{{jsonData}}</!-->
+                -->
               </div>
             </table>
           </td>
@@ -115,23 +128,32 @@
 
 <script>
 import PieChart from "../components/PieChart.vue";
+import axios from "axios";
+import benefitsList from "../data/data2.json";
 
 export default {
   components: {
-    "pie-chart": PieChart,
+    "pie-chart": PieChart
+  },
+  mounted: function() {
+    const baseURL = "http://localhost:9090/api/v1/benefits";
+    for (var benefits of benefitsList) {
+      axios.post(baseURL, benefits).then(console.log("completed"));
+    }
+    axios.get(baseURL).then(response => console.log(response));
   }
 };
 </script>
 
 <style scoped>
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
   .td-left {
     font-size: 0.75em;
   }
   .td-right {
     font-size: 0.75em;
   }
-} 
+}
 .shadow-background {
   padding: 13px 13px 13px 13px;
   width: fit-content;
