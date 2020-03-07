@@ -2,10 +2,6 @@
   <div class="shadow-background">
     <div class="shadow-two-background">
       <table class="shadow-three-background">
-        <!-- <div v-for="benefit in benefits" :key="benefit">
-          <H1>{{ benefit.name }}</H1>
-        </div>
-        <button type="button" (click)="fetchBenefits()">Click Me!</button>-->
         <tr class="doc-header">
           <td class="td-left">
             <img
@@ -23,9 +19,7 @@
               staff (.75FTE or Greater)
               <br />
             </span>
-            <span style="color:#026937"
-              >Estimate & Illustrative of Approximate Salary</span
-            >
+            <span style="color:#026937">Estimate & Illustrative of Approximate Salary</span>
           </td>
         </tr>
         <tr class="benefits-summary">
@@ -43,9 +37,7 @@
                 <td class="table-column-right">$45,000.00</td>
               </tr>
               <tr class="header-orange">
-                <th class="table-column-left" colspan="2">
-                  Benefits (WSU paid)
-                </th>
+                <th class="table-column-left" colspan="2">Benefits (WSU paid)</th>
               </tr>
               <tr>
                 <td class="table-column-left">Medical-Single(HDHP)</td>
@@ -72,9 +64,7 @@
                 <td class="table-column-right">$144.00</td>
               </tr>
               <tr>
-                <td class="table-column-left">
-                  Accidental Death & Dismemberment
-                </td>
+                <td class="table-column-left">Accidental Death & Dismemberment</td>
                 <td class="table-column-right">$22.00</td>
               </tr>
               <tr>
@@ -101,15 +91,10 @@
                 <td></td>
               </tr>
               <tr class="header-green">
-                <th class="table-column-left">
-                  Approximate Total Compensation
-                </th>
+                <th class="table-column-left">Approximate Total Compensation</th>
                 <td class="table-column-right">$60,804.00</td>
               </tr>
-              <div>
-                <!-- <json-data>{{jsonData}}</!-->
-                -->
-              </div>
+              <div></div>
             </table>
           </td>
           <td class="td-right-pie-chart">
@@ -126,18 +111,16 @@
               <div class="add-benefits-check">
                 <li>
                   Sick Leave - for accrual rate visit
-                  <a href="htps://policy.wright.edu/policy/8420-sick-leave"
-                    >Sick Leave Policy</a
-                  >
+                  <a
+                    href="htps://policy.wright.edu/policy/8420-sick-leave"
+                  >Sick Leave Policy</a>
                 </li>
-                <li>
-                  Tuition Remission: Employee 100%, Spouses and Dependents 80%
-                </li>
+                <li>Tuition Remission: Employee 100%, Spouses and Dependents 80%</li>
                 <li>
                   Vacation - for accrual rate visit
-                  <a href="htps://policy.wright.edu/policy/8410-vacation"
-                    >Vacation Policy</a
-                  >
+                  <a
+                    href="htps://policy.wright.edu/policy/8410-vacation"
+                  >Vacation Policy</a>
                 </li>
               </div>
               <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
@@ -155,17 +138,16 @@
                 <li>Tobacco-Free Campus</li>
                 <li>Volunteer Opportunities</li>
               </div>
-              <li>
-                Flexible Spending Accounts (Healthcare and Dependent Daycare)
-              </li>
-              <li>
-                Onsite Fitness Center & Onsite Health Management Screenings
-              </li>
+              <li>Flexible Spending Accounts (Healthcare and Dependent Daycare)</li>
+              <li>Onsite Fitness Center & Onsite Health Management Screenings</li>
               <li>Short-Term Disability</li>
               <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
               <br />
               <center>
-                <li>Charges Apply <b>✓</b> No Charge</li>
+                <li>
+                  Charges Apply
+                  <b>✓</b> No Charge
+                </li>
               </center>
             </div>
           </td>
@@ -178,7 +160,8 @@
 <script>
 import PieChart from "../components/PieChart.vue";
 import axios from "axios";
-import benefitsList from "../data/data2.json";
+//import benefitsList from "../data/data2.json";
+import benefits from "../data/json.json";
 
 export default {
   components: {
@@ -186,10 +169,20 @@ export default {
   },
   mounted: function() {
     const baseURL = "http://localhost:9090/api/v1/benefits";
-    for (var benefits of benefitsList) {
-      axios.post(baseURL, benefits).then(console.log("completed"));
-    }
-    axios.get(baseURL).then(response => console.log(response));
+
+    // for (var benefits of benefitsList) {
+    //   axios.post(baseURL, benefits).then(console.log("completed"));
+    // }
+    axios.get(baseURL).then(response => {
+      console.log(response.data);
+      var object = response.data;
+      if (Object.keys(object).length == 0) {
+        axios.post(baseURL, benefits).then(console.log("completed"));
+        console.log("created");
+      } else {
+        console.log("no need");
+      }
+    });
   }
 };
 </script>
