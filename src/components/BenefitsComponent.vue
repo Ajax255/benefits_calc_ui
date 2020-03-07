@@ -119,7 +119,56 @@
           </td>
         </tr>
         <tr class="additional-benefits">
-          <td colspan="2"></td>
+          <td colspan="2">
+            <div additional-benefits-wrapper>
+              <h3>Additional benefits not quantified but part of package:</h3>
+
+              <div class="add-benefits-check">
+                <li>
+                  Sick Leave - for accrual rate visit
+                  <a href="htps://policy.wright.edu/policy/8420-sick-leave"
+                    >Sick Leave Policy</a
+                  >
+                </li>
+                <li>
+                  Tuition Remission: Employee 100%, Spouses and Dependents 80%
+                </li>
+                <li>
+                  Vacation - for accrual rate visit
+                  <a href="htps://policy.wright.edu/policy/8410-vacation"
+                    >Vacation Policy</a
+                  >
+                </li>
+              </div>
+              <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
+              <div class="add-benefits-check">
+                <li>Adoption Assistance - Up to $4,000 per child</li>
+                <li>Employee Assistance Program</li>
+                <li>Engage Healthcare Transparency Tool</li>
+                <li>Family Medical Leave</li>
+                <li>Milestone Years of Service Awards</li>
+                <li>
+                  Onsite Preventive Screenings: Mobile Mammography, Biometric
+                  Screening & Flu Shots
+                </li>
+                <li>Paid Parental Leave</li>
+                <li>Tobacco-Free Campus</li>
+                <li>Volunteer Opportunities</li>
+              </div>
+              <li>
+                Flexible Spending Accounts (Healthcare and Dependent Daycare)
+              </li>
+              <li>
+                Onsite Fitness Center & Onsite Health Management Screenings
+              </li>
+              <li>Short-Term Disability</li>
+              <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
+              <br />
+              <center>
+                <li>Charges Apply <b>✓</b> No Charge</li>
+              </center>
+            </div>
+          </td>
         </tr>
       </table>
     </div>
@@ -153,6 +202,19 @@ export default {
   .td-right {
     font-size: 0.75em;
   }
+}
+
+.additional-benefits-wrapper {
+  margin-left: 10px;
+}
+
+.add-benefits-check li {
+  list-style: none;
+}
+
+.add-benefits-check li:before {
+  content: "✓  ";
+  font-weight: bold;
 }
 .shadow-background {
   padding: 13px 13px 13px 13px;
