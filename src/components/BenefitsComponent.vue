@@ -19,7 +19,9 @@
               staff (.75FTE or Greater)
               <br />
             </span>
-            <span style="color:#026937">Estimate & Illustrative of Approximate Salary</span>
+            <span style="color:#026937"
+              >Estimate & Illustrative of Approximate Salary</span
+            >
           </td>
         </tr>
         <tr class="benefits-summary">
@@ -37,7 +39,9 @@
                 <td class="table-column-right">$45,000.00</td>
               </tr>
               <tr class="header-orange">
-                <th class="table-column-left" colspan="2">Benefits (WSU paid)</th>
+                <th class="table-column-left" colspan="2">
+                  Benefits (WSU paid)
+                </th>
               </tr>
               <tr>
                 <td class="table-column-left">Medical-Single(HDHP)</td>
@@ -64,7 +68,9 @@
                 <td class="table-column-right">$144.00</td>
               </tr>
               <tr>
-                <td class="table-column-left">Accidental Death & Dismemberment</td>
+                <td class="table-column-left">
+                  Accidental Death & Dismemberment
+                </td>
                 <td class="table-column-right">$22.00</td>
               </tr>
               <tr>
@@ -91,11 +97,14 @@
                 <td></td>
               </tr>
               <tr class="header-green">
-                <th class="table-column-left">Approximate Total Compensation</th>
+                <th class="table-column-left">
+                  Approximate Total Compensation
+                </th>
                 <td class="table-column-right">$60,804.00</td>
               </tr>
               <div>
-                <json-data>{{jsonData}}</json-data>
+                <!-- <json-data>{{jsonData}}</!-->
+                -->
               </div>
             </table>
           </td>
@@ -108,67 +117,90 @@
         <tr class="additional-benefits">
           <td colspan="2">
             <div additional-benefits-wrapper>
-          <h3>Additional benefits not quantified but part of package: </h3>
-            
-            <div class="add-benefits-check">
-            <li>Sick Leave - for accrual rate visit <a href="htps://policy.wright.edu/policy/8420-sick-leave">Sick Leave Policy</a></li>
-            <li>Tuition Remission: Employee 100%, Spouses and Dependents 80% </li>
-            <li>Vacation - for accrual rate visit <a href="htps://policy.wright.edu/policy/8410-vacation">Vacation Policy</a></li>
-            </div>
-            <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
-            <div class="add-benefits-check">
-            <li>Adoption Assistance - Up to $4,000 per child </li>
-            <li>Employee Assistance Program </li>
-            <li>Engage Healthcare Transparency Tool </li>
-            <li>Family Medical Leave </li>
-            <li>Milestone Years of Service Awards </li>
-            <li>Onsite Preventive Screenings: Mobile Mammography, Biometric Screening & Flu Shots </li>
-            <li>Paid Parental Leave </li>
-            <li>Tobacco-Free Campus </li>
-            <li>Volunteer Opportunities </li>
-            </div>
-            <li>Flexible Spending Accounts (Healthcare and Dependent Daycare)</li>
-            <li>Onsite Fitness Center & Onsite Health Management Screenings</li>
-            <li>Short-Term Disability</li>
-            <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
-            <br>
-            <center><li> Charges Apply <b>✓</b> No Charge</li></center>
-            
+              <h3>Additional benefits not quantified but part of package:</h3>
 
-        </div>
+              <div class="add-benefits-check">
+                <li>
+                  Sick Leave - for accrual rate visit
+                  <a href="htps://policy.wright.edu/policy/8420-sick-leave"
+                    >Sick Leave Policy</a
+                  >
+                </li>
+                <li>
+                  Tuition Remission: Employee 100%, Spouses and Dependents 80%
+                </li>
+                <li>
+                  Vacation - for accrual rate visit
+                  <a href="htps://policy.wright.edu/policy/8410-vacation"
+                    >Vacation Policy</a
+                  >
+                </li>
+              </div>
+              <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
+              <div class="add-benefits-check">
+                <li>Adoption Assistance - Up to $4,000 per child</li>
+                <li>Employee Assistance Program</li>
+                <li>Engage Healthcare Transparency Tool</li>
+                <li>Family Medical Leave</li>
+                <li>Milestone Years of Service Awards</li>
+                <li>
+                  Onsite Preventive Screenings: Mobile Mammography, Biometric
+                  Screening & Flu Shots
+                </li>
+                <li>Paid Parental Leave</li>
+                <li>Tobacco-Free Campus</li>
+                <li>Volunteer Opportunities</li>
+              </div>
+              <li>
+                Flexible Spending Accounts (Healthcare and Dependent Daycare)
+              </li>
+              <li>
+                Onsite Fitness Center & Onsite Health Management Screenings
+              </li>
+              <li>Short-Term Disability</li>
+              <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
+              <br />
+              <center>
+                <li>Charges Apply <b>✓</b> No Charge</li>
+              </center>
+            </div>
           </td>
         </tr>
-        
       </table>
-      
     </div>
-    
   </div>
 </template>
 
 <script>
 import PieChart from "../components/PieChart.vue";
-import jsonData from "../components/json.vue";
+import axios from "axios";
+import benefitsList from "../data/data2.json";
 
 export default {
   components: {
-    "pie-chart": PieChart,
-    "json-data": jsonData
+    "pie-chart": PieChart
+  },
+  mounted: function() {
+    const baseURL = "http://localhost:9090/api/v1/benefits";
+    for (var benefits of benefitsList) {
+      axios.post(baseURL, benefits).then(console.log("completed"));
+    }
+    axios.get(baseURL).then(response => console.log(response));
   }
 };
 </script>
 
 <style scoped>
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
   .td-left {
     font-size: 0.75em;
   }
   .td-right {
     font-size: 0.75em;
   }
-} 
+}
 
-.additional-benefits-wrapper{
+.additional-benefits-wrapper {
   margin-left: 10px;
 }
 
@@ -177,7 +209,7 @@ export default {
 }
 
 .add-benefits-check li:before {
-  content: '✓  ';
+  content: "✓  ";
   font-weight: bold;
 }
 .shadow-background {
@@ -185,7 +217,6 @@ export default {
   width: fit-content;
   height: fit-content;
   background: #026937;
-  
 }
 .shadow-two-background {
   padding: 10px 10px 10px 10px;
