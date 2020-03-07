@@ -5,16 +5,13 @@ export default {
   extends: Doughnut,
   data: () => ({
     chartdata: {
-      labels: ["Salary", "Benefits", "Dark-Grey", "Gray", "Light-Gray"],
+      labels: ["Salary", "Benefits"],
       datasets: [
         {
-          data: [0.74, 0.26, 0.15, 0.15, 0.15],
+          data: [0.74, 0.26],
           backgroundColor: [
             "#026937",
-            "#cea052",
-            "#666666",
-            "#aaaaaa",
-            "#cccccc"
+            "#cea052"
           ],
           label: "Dataset 1"
         }
@@ -28,7 +25,8 @@ export default {
       title: {
         display: true,
         position: "top",
-        text: "Total Compensation"
+        text: "Total Compensation",
+        fontSize: 20,
       },
       animation: {
         animateScale: true,
@@ -43,5 +41,11 @@ export default {
 </script>
 
 <style>
+@media only screen and (max-width: 700px){
+  #doughnut-chart {
+    width: 250px;
+    height: 250px;
+  }
+}
 </style>
 
