@@ -159,30 +159,10 @@
 
 <script>
 import PieChart from "../components/PieChart.vue";
-import axios from "axios";
-//import benefitsList from "../data/data2.json";
-import benefits from "../data/json.json";
 
 export default {
   components: {
     "pie-chart": PieChart
-  },
-  mounted: function() {
-    const baseURL = "http://localhost:9090/api/v1/benefits";
-
-    // for (var benefits of benefitsList) {
-    //   axios.post(baseURL, benefits).then(console.log("completed"));
-    // }
-    axios.get(baseURL).then(response => {
-      console.log(response.data);
-      var object = response.data;
-      if (Object.keys(object).length == 0) {
-        axios.post(baseURL, benefits).then(console.log("completed"));
-        console.log("created");
-      } else {
-        console.log("no need");
-      }
-    });
   }
 };
 </script>
