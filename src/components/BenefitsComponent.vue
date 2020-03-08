@@ -1,16 +1,16 @@
 <template>
-  <div class="shadow-background">
+  <div class="shadow-background" >
     <div class="shadow-two-background">
-      <table class="shadow-three-background">
-        <tr class="doc-header">
-          <td class="td-left">
+      <div class="shadow-three-background">
+        <div class="doc-header">
+          <div class="td-left">
             <img
               class="wright-logo"
               alt="Wright State Logo"
               src="../assets/02_WRIGHTSTATE_BIPLANE_N_FULL.jpg"
             />
-          </td>
-          <td class="td-right total-comp">
+          </div>
+          <div class="td-right total-comp">
             <span style="color:#026937">
               Total Compensation Statement
               <br />
@@ -20,10 +20,9 @@
               <br />
             </span>
             <span style="color:#026937">Estimate & Illustrative of Approximate Salary</span>
-          </td>
-        </tr>
-        <tr class="benefits-summary">
-          <td class="td-left">
+          </div>
+        </div>
+         <div>
             <table class="summary-table">
               <tr class="header-green">
                 <th class="table-column-left" colspan="2">Salary</th>
@@ -96,63 +95,58 @@
               </tr>
               <div></div>
             </table>
-          </td>
-          <td class="td-right-pie-chart">
+          <div class="td-right-pie-chart">
             <center>
               <pie-chart></pie-chart>
             </center>
-          </td>
-        </tr>
-        <tr class="additional-benefits">
-          <td colspan="2">
-            <div additional-benefits-wrapper>
-              <h3>Additional benefits not quantified but part of package:</h3>
+          </div>
+          </div>
+          <div additional-benefits-wrapper>
+            <h3>Additional benefits not quantified but part of package:</h3>
 
-              <div class="add-benefits-check">
-                <li>
-                  Sick Leave - for accrual rate visit
-                  <a
-                    href="htps://policy.wright.edu/policy/8420-sick-leave"
-                  >Sick Leave Policy</a>
-                </li>
-                <li>Tuition Remission: Employee 100%, Spouses and Dependents 80%</li>
-                <li>
-                  Vacation - for accrual rate visit
-                  <a
-                    href="htps://policy.wright.edu/policy/8410-vacation"
-                  >Vacation Policy</a>
-                </li>
-              </div>
-              <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
-              <div class="add-benefits-check">
-                <li>Adoption Assistance - Up to $4,000 per child</li>
-                <li>Employee Assistance Program</li>
-                <li>Engage Healthcare Transparency Tool</li>
-                <li>Family Medical Leave</li>
-                <li>Milestone Years of Service Awards</li>
-                <li>
-                  Onsite Preventive Screenings: Mobile Mammography, Biometric
-                  Screening & Flu Shots
-                </li>
-                <li>Paid Parental Leave</li>
-                <li>Tobacco-Free Campus</li>
-                <li>Volunteer Opportunities</li>
-              </div>
-              <li>Flexible Spending Accounts (Healthcare and Dependent Daycare)</li>
-              <li>Onsite Fitness Center & Onsite Health Management Screenings</li>
-              <li>Short-Term Disability</li>
-              <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
-              <br />
-              <center>
-                <li>
-                  Charges Apply
-                  <b>✓</b> No Charge
-                </li>
-              </center>
+            <div class="add-benefits-check">
+              <li>
+                Sick Leave - for accrual rate visit
+                <a
+                  href="htps://policy.wright.edu/policy/8420-sick-leave"
+                >Sick Leave Policy</a>
+              </li>
+              <li>Tuition Remission: Employee 100%, Spouses and Dependents 80%</li>
+              <li>
+                Vacation - for accrual rate visit
+                <a
+                  href="htps://policy.wright.edu/policy/8410-vacation"
+                >Vacation Policy</a>
+              </li>
             </div>
-          </td>
-        </tr>
-      </table>
+            <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
+            <div class="add-benefits-check">
+              <li>Adoption Assistance - Up to $4,000 per child</li>
+              <li>Employee Assistance Program</li>
+              <li>Engage Healthcare Transparency Tool</li>
+              <li>Family Medical Leave</li>
+              <li>Milestone Years of Service Awards</li>
+              <li>
+                Onsite Preventive Screenings: Mobile Mammography, Biometric
+                Screening & Flu Shots
+              </li>
+              <li>Paid Parental Leave</li>
+              <li>Tobacco-Free Campus</li>
+              <li>Volunteer Opportunities</li>
+            </div>
+            <li>Flexible Spending Accounts (Healthcare and Dependent Daycare)</li>
+            <li>Onsite Fitness Center & Onsite Health Management Screenings</li>
+            <li>Short-Term Disability</li>
+            <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
+            <br />
+            <center>
+              <li>
+                Charges Apply
+                <b>✓</b> No Charge
+              </li>
+            </center>
+          </div>
+      </div>
     </div>
   </div>
 </template>
