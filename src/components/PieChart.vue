@@ -9,28 +9,37 @@ export default {
       datasets: [
         {
           data: [0.74, 0.26],
-          backgroundColor: [
-            "#026937",
-            "#cea052"
-          ],
+          backgroundColor: ["#026937", "#cea052"],
           label: "Dataset 1"
         }
       ]
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       legend: {
-        position: "top"
+        position: "top",
+        labels: {
+          fontSize: 15 // Where font size for lables is set (need to figure a way to dynamically set this)
+        }
       },
       title: {
         display: true,
         position: "top",
         text: "Total Compensation",
-        fontSize: 20,
+        fontSize: 20 // Where font size for the title is set (need to figure a way to dynamically set this)
       },
       animation: {
         animateScale: true,
         animateRotate: true
+      },
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 40
+        }
       }
     }
   }),
@@ -41,11 +50,10 @@ export default {
 </script>
 
 <style>
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
   #doughnut-chart {
     width: 250px;
     height: 250px;
   }
 }
 </style>
-
