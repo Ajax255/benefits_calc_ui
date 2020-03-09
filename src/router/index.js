@@ -11,17 +11,12 @@ export default new Router({
       path: "/benefits",
       name: "BenefitsComponent",
       component: Benefits
-      //   children: [
-      //     {
-      //       path: 'child',
-      //       component: FirstRouteChild
-      //     }
-      //   ]
     },
     {
       path: "/",
       name: "Login",
-      component: Login
+      component: Login,
+      props: true
     }
   ]
 });

@@ -1,8 +1,18 @@
 <template>
   <div id="login">
     <h1>Login</h1>
-    <input type="text" name="username" v-model="input.username" placeholder="Username" />
-    <input type="password" name="password" v-model="input.password" placeholder="Password" />
+    <input
+      type="text"
+      name="username"
+      v-model="input.username"
+      placeholder="Username"
+    />
+    <input
+      type="password"
+      name="password"
+      v-model="input.password"
+      placeholder="Password"
+    />
     <button type="button" v-on:click="login()">Login</button>
   </div>
 </template>
@@ -32,17 +42,17 @@ export default {
             .get(
               "http://localhost:9090/api/v1/benefits" +
                 "/" +
-                "f80b5043-2b35-4977-9cb7-4a69db436ff4"
+                "7edaf463-d83d-4afd-a626-80826683a434"
             )
             .then(response => {
-              console.log(response);
+              console.log(response.data);
               console.log("completed");
+              this.$emit("authenticated", true);
+              this.$router.replace({
+                name: "BenefitsComponent",
+                params: response.data
+              });
             });
-          this.$emit("authenticated", true);
-          this.$router.replace({
-            name: "BenefitsComponent",
-            props: this.input.username
-          });
         } else {
           console.log("The username and / or password is incorrect");
         }
