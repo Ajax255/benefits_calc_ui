@@ -109,7 +109,9 @@
             <div class="add-benefits-check">
               <li>
                 Sick Leave - for accrual rate visit
-                <a href="htps://policy.wright.edu/policy/8420-sick-leave"
+                <a
+                  href="htps://policy.wright.edu/policy/8420-sick-leave"
+                  target="_blank"
                   >Sick Leave Policy</a
                 >
               </li>
@@ -118,7 +120,9 @@
               </li>
               <li>
                 Vacation - for accrual rate visit
-                <a href="htps://policy.wright.edu/policy/8410-vacation"
+                <a
+                  href="htps://policy.wright.edu/policy/8410-vacation"
+                  target="_blank"
                   >Vacation Policy</a
                 >
               </li>
@@ -192,6 +196,9 @@ export default {
 
   .doc-body-end {
     font-size: 1em;
+  }
+  .additional-benefits {
+    font-size: 0.75em;
   }
 }
 
@@ -334,11 +341,20 @@ export default {
 
 .add-benefits-check li {
   list-style: none;
+  padding-bottom: 0.5em;
+  text-align: left;
+}
+
+li {
+  list-style-type: disc;
+  padding-left: 1em;
+  padding-bottom: 0.5em;
 }
 
 .add-benefits-check li:before {
   content: "✓  ";
   font-weight: bold;
+  padding-right: 0.25em;
 }
 
 .boxr {
