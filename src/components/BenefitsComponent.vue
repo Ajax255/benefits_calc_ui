@@ -112,14 +112,16 @@
                 <li>
                   Sick Leave - for accrual rate visit
                   <a
-                    href="htps://policy.wright.edu/policy/8420-sick-leave"
+                    href="https://policy.wright.edu/policy/8420-sick-leave"
+                    target="_blank"
                   >Sick Leave Policy</a>
                 </li>
                 <li>Tuition Remission: Employee 100%, Spouses and Dependents 80%</li>
                 <li>
                   Vacation - for accrual rate visit
                   <a
-                    href="htps://policy.wright.edu/policy/8410-vacation"
+                    href="https://policy.wright.edu/policy/8410-vacation"
+                    target="_blank"
                   >Vacation Policy</a>
                 </li>
               </div>
@@ -195,6 +197,9 @@ export default {
   .td-right {
     font-size: 0.75em;
   }
+  .additional-benefits {
+    font-size: 0.75em;
+  }
 }
 
 .additional-benefits-wrapper {
@@ -203,11 +208,20 @@ export default {
 
 .add-benefits-check li {
   list-style: none;
+  padding-bottom: 0.5em;
+  text-align: left;
+}
+
+li {
+  list-style-type: disc;
+  padding-left: 1em;
+  padding-bottom: 0.5em;
 }
 
 .add-benefits-check li:before {
   content: "✓  ";
   font-weight: bold;
+  padding-right: 0.25em;
 }
 .shadow-background {
   padding: 13px 13px 13px 13px;
