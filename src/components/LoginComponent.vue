@@ -32,21 +32,15 @@ export default {
   },
   methods: {
     login() {
-      console.log("yep");
       if (this.input.username != "" && this.input.password != "") {
-        if (
-          this.input.username == "admin" &&
-          this.input.password == "pasword"
-        ) {
+        if (this.input.password == "password") {
           axios
             .get(
               "http://localhost:9090/api/v1/benefits" +
                 "/" +
-                "7edaf463-d83d-4afd-a626-80826683a434"
+                this.input.username
             )
             .then(response => {
-              console.log(response.data);
-              console.log("completed");
               this.$emit("authenticated", true);
               this.$router.replace({
                 name: "BenefitsComponent",
