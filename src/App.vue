@@ -5,25 +5,9 @@
 </template>
 
 <script>
-import axios from "axios";
-import { baseURL } from "../src/APICalls";
-import benefitsList from "../src/data/sampleList.json";
 
 export default {
   name: "app",
-  mounted: function() {
-    axios.get(baseURL).then(response => {
-      var object = response.data;
-      if (Object.keys(object).length == 0) {
-        for (var benefits of benefitsList) {
-          axios.post(baseURL, benefits).then(console.log("completed"));
-        }
-        console.log("created");
-      } else {
-        console.log("no need");
-      }
-    });
-  }
 };
 </script>
 

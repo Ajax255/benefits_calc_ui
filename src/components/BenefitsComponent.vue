@@ -92,7 +92,7 @@
             </tr>
             <tr class="header-green">
               <th class="td-left">Approximate Total Compensation</th>
-              <td class="td-right">$60,804.00</td>
+              <td class="td-right">{{benefits.name}}$60,804.00</td>
             </tr>
             <div>{{ this.$route.params }}</div>
           </table>
@@ -178,9 +178,6 @@ export default {
     id: String,
     name: String
   },
-  mounted: function() {
-    console.log(this.$route.params);
-  }
 };
 </script>
 
