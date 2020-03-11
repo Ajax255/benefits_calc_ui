@@ -1,14 +1,16 @@
 <script>
 import { Doughnut } from "vue-chartjs";
 
+
 export default {
   extends: Doughnut,
+  
   data: () => ({
     chartdata: {
       labels: ["Salary", "Benefits"],
       datasets: [
         {
-          data: [0.74, 0.26],
+          data: ['.5', 'test'],
           backgroundColor: ["#026937", "#cea052"],
           label: "Dataset 1"
         }
