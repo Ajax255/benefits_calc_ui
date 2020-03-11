@@ -23,23 +23,33 @@ export default {
   methods: {
     login() {
       if (this.input.username != "" && this.input.password != "") {
-        if (this.input.password == "password") {
-          axios
-            .get(
-              "http://localhost:9090/api/v1/benefits" +
-                "/" +
-                this.input.username //+"~" + this.input.password
-            )
-            .then(response => {
-              this.$emit("authenticated", true);
-              this.$router.replace({
-                name: "BenefitsComponent",
-                params: response.data
-              });
-            });
-        } else {
-          console.log("The username and / or password is incorrect");
-        }
+        axios
+          .get(
+            "http://localhost:9090/api/v1/authorization" +
+              "/" +
+              this.input.username +
+              "/" +
+              this.input.password
+          )
+          .then(auth => {
+            console.log(auth.data);
+            if (auth.data != "") {
+              axios
+                .get(
+                  "http://localhost:9090/api/v1/benefits" +
+                    "/" +
+                    auth.data["Name"]
+                )
+                .then(response => {
+                  this.$router.replace({
+                    name: "BenefitsComponent",
+                    params: response.data
+                  });
+                });
+            } else {
+              console.log("The username and / or password is incorrect");
+            }
+          });
       } else {
         console.log("A username and password must be present");
       }

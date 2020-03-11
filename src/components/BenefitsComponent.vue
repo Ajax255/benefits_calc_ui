@@ -31,68 +31,68 @@
             </tr>
             <tr>
               <td class="td-left">Base Salary</td>
-              <td class="td-right">$45,000.00</td>
+              <td class="td-right">${{benefits['Base Salary']}}</td>
             </tr>
             <tr>
               <td class="td-left">Total Salary</td>
-              <td class="td-right">$45,000.00</td>
+              <td class="td-right">${{benefits['Total Income']}}</td>
             </tr>
             <tr class="header-orange">
               <th class="td-left" colspan="2">Benefits (WSU paid)</th>
             </tr>
             <tr>
               <td class="td-left">Medical-Single(HDHP)</td>
-              <td class="td-right">$5,568.00</td>
+              <td class="td-right">${{benefits['MedAmt']}}</td>
             </tr>
             <tr>
               <td class="td-left">Dental-Single</td>
-              <td class="td-right">$355.00</td>
+              <td class="td-right">${{benefits['DentAmt']}}</td>
             </tr>
             <tr>
               <td class="td-left">Vision-Single</td>
-              <td class="td-right">$77.00</td>
+              <td class="td-right">${{benefits['VisnAmt']}}</td>
             </tr>
             <tr>
               <td class="td-left">Retirement</td>
-              <td class="td-right">$6,300.00</td>
+              <td class="td-right">${{benefits['Retirement']}}</td>
             </tr>
             <tr>
               <td class="td-left">Health Savings Accounts (HSA)</td>
-              <td class="td-right">$500.00</td>
+              <td class="td-right">${{benefits['HSA Amt']}}</td>
             </tr>
             <tr>
               <td class="td-left">Life Insurance</td>
-              <td class="td-right">$144.00</td>
+              <td class="td-right">${{benefits['Life Insurance']}}</td>
             </tr>
             <tr>
               <td class="td-left">
                 Accidental Death & Dismemberment
               </td>
-              <td class="td-right">$22.00</td>
+              <td class="td-right">${{benefits['Accidental']}}</td>
             </tr>
             <tr>
               <td class="td-left">Long Term Disability</td>
-              <td class="td-right">$108.00</td>
+              <td class="td-right">${{benefits['Long Term Disb']}}</td>
             </tr>
             <tr>
               <td class="td-left">Medicare</td>
-              <td class="td-right">$653.00</td>
+              <td class="td-right">${{benefits['Medicare']}}</td>
             </tr>
             <tr>
               <td class="td-left">Holidays (10 days)</td>
-              <td class="td-right">$1,731.00</td>
+              <td class="td-right">${{benefits['Holidays']}}</td>
             </tr>
             <tr>
               <td class="td-left">Winter Leave (2 days)</td>
-              <td class="td-right">$346</td>
+              <td class="td-right">${{benefits['Winter Leave']}}</td>
             </tr>
             <tr>
               <th class="td-left">Approximate Total Benefits</th>
-              <td class="td-right">$15,804.00</td>
+              <td class="td-right">${{benefits['Total Benefits']}}</td>
             </tr>
             <tr class="header-green">
               <th class="td-left">Approximate Total Compensation</th>
-              <td class="td-right">{{benefits.name}}$60,804.00</td>
+              <td class="td-right">${{benefits['Total Salary and Benefits']}}</td>
             </tr>
             <div>{{ this.$route.params }}</div>
           </table>
@@ -167,11 +167,12 @@ import PieChart from "../components/PieChart.vue";
 
 export default {
   components: {
-    "pie-chart": PieChart
+    "pie-chart": PieChart,
   },
   data() {
     return {
-      benefits: this.$route.params
+      benefits: this.$route.params,
+      
     };
   },
   props: {
