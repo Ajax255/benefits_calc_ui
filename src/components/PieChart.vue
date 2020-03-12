@@ -4,18 +4,13 @@ import { Doughnut } from "vue-chartjs";
 
 export default {
   extends: Doughnut,
-  
-  data: () => ({
+  props: {
     chartdata: {
-      labels: ["Salary", "Benefits"],
-      datasets: [
-        {
-          data: ['.5', 'test'],
-          backgroundColor: ["#026937", "#cea052"],
-          label: "Dataset 1"
-        }
-      ]
+      type: Object,
+      default: null
     },
+  },
+  data: () => ({
     options: {
       responsive: true,
       maintainAspectRatio: false,

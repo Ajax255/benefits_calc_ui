@@ -19,9 +19,7 @@
               staff (.75FTE or Greater)
               <br />
             </span>
-            <span style="color:#026937"
-              >Estimate & Illustrative of Approximate Salary</span
-            >
+            <span style="color:#026937">Estimate & Illustrative of Approximate Salary</span>
           </div>
         </div>
         <div class="doc-body-mid">
@@ -41,15 +39,15 @@
               <th class="td-left" colspan="2">Benefits (WSU paid)</th>
             </tr>
             <tr>
-              <td class="td-left">Medical-Single(HDHP)</td>
+              <td class="td-left">{{benefits['Medical']}}</td>
               <td class="td-right">${{benefits['MedAmt']}}</td>
             </tr>
             <tr>
-              <td class="td-left">Dental-Single</td>
+              <td class="td-left">{{benefits['Dental']}}</td>
               <td class="td-right">${{benefits['DentAmt']}}</td>
             </tr>
             <tr>
-              <td class="td-left">Vision-Single</td>
+              <td class="td-left">{{benefits['Vision']}}</td>
               <td class="td-right">${{benefits['VisnAmt']}}</td>
             </tr>
             <tr>
@@ -65,9 +63,7 @@
               <td class="td-right">${{benefits['Life Insurance']}}</td>
             </tr>
             <tr>
-              <td class="td-left">
-                Accidental Death & Dismemberment
-              </td>
+              <td class="td-left">Accidental Death & Dismemberment</td>
               <td class="td-right">${{benefits['Accidental']}}</td>
             </tr>
             <tr>
@@ -94,12 +90,11 @@
               <th class="td-left">Approximate Total Compensation</th>
               <td class="td-right">${{benefits['Total Salary and Benefits']}}</td>
             </tr>
-            <div>{{ this.$route.params }}</div>
+            <div>{{ this.$route.params }} {{pieData}}</div>
           </table>
-
           <div class="pie-chart doc-body-right">
             <center>
-              <pie-chart></pie-chart>
+              <pie-chart :chartdata="chartData"></pie-chart>
             </center>
           </div>
         </div>
@@ -112,19 +107,15 @@
                 <a
                   href="htps://policy.wright.edu/policy/8420-sick-leave"
                   target="_blank"
-                  >Sick Leave Policy</a
-                >
+                >Sick Leave Policy</a>
               </li>
-              <li>
-                Tuition Remission: Employee 100%, Spouses and Dependents 80%
-              </li>
+              <li>Tuition Remission: Employee 100%, Spouses and Dependents 80%</li>
               <li>
                 Vacation - for accrual rate visit
                 <a
                   href="htps://policy.wright.edu/policy/8410-vacation"
                   target="_blank"
-                  >Vacation Policy</a
-                >
+                >Vacation Policy</a>
               </li>
             </div>
             <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
@@ -142,9 +133,7 @@
               <li>Tobacco-Free Campus</li>
               <li>Volunteer Opportunities</li>
             </div>
-            <li>
-              Flexible Spending Accounts (Healthcare and Dependent Daycare)
-            </li>
+            <li>Flexible Spending Accounts (Healthcare and Dependent Daycare)</li>
             <li>Onsite Fitness Center & Onsite Health Management Screenings</li>
             <li>Short-Term Disability</li>
             <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
@@ -167,18 +156,29 @@ import PieChart from "../components/PieChart.vue";
 
 export default {
   components: {
-    "pie-chart": PieChart,
+    "pie-chart": PieChart
   },
   data() {
     return {
       benefits: this.$route.params,
-      
+      chartData: {
+        labels: ["Salary", "Benefits"],
+        datasets: [
+          {
+            data: [20, 10],
+            backgroundColor: ["#026937", "#cea052"],
+            label: "Dataset 1"
+          }
+        ]
+      }
+
+      //:salary="benefits['Total Income']" :benefit="pieData"
     };
   },
   props: {
     id: String,
     name: String
-  },
+  }
 };
 </script>
 
