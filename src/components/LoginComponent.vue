@@ -10,7 +10,7 @@
     <input
       v-model="input.password"
       type="password"
-      name="password"
+      name="p assword"
       placeholder="Password"
     />
     <button type="button" @click="login()">Login</button>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import BenefitsService from '@/services/BenefitsService.js';
+import BenefitsService from '@/services/BenefitsService.js'
 
 export default {
   name: 'Login',
@@ -28,7 +28,7 @@ export default {
         username: '',
         password: ''
       }
-    };
+    }
   },
   methods: {
     login() {
@@ -37,24 +37,24 @@ export default {
           this.input.username,
           this.input.password
         ).then(auth => {
-          console.log(auth.data);
+          console.log(auth.data)
           if (auth.data != '') {
             BenefitsService.getBenefits(auth.data).then(response => {
-              console.log(response);
+              this.$store.dispatch('setBenefits', response.data)
               this.$router.replace({
                 name: 'BenefitsComponent'
-              });
-            });
+              })
+            })
           } else {
-            console.log('The username and / or password is incorrect');
+            console.log('The username and / or password is incorrect')
           }
-        });
+        })
       } else {
-        console.log('A username and password must be present');
+        console.log('A username and password must be present')
       }
     }
   }
-};
+}
 </script>
 
 <style scoped>

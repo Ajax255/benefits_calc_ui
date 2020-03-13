@@ -38,7 +38,9 @@
               <td class="td-right">${{ $store.state.totalIncome }}</td>
             </tr>
             <tr class="header-orange">
-              <th class="td-left" colspan="2">Benefits (WSU paid)</th>
+              <th class="td-left" colspan="2">
+                Benefits (WSU paid)
+              </th>
             </tr>
             <tr>
               <td class="td-left">{{ $store.state.medical }}</td>
@@ -57,7 +59,9 @@
               <td class="td-right">${{ $store.state.retirement }}</td>
             </tr>
             <tr>
-              <td class="td-left">Health Savings Accounts (HSA)</td>
+              <td class="td-left">
+                Health Savings Accounts (HSA)
+              </td>
               <td class="td-right">${{ $store.state.hsaAmt }}</td>
             </tr>
             <tr>
@@ -65,7 +69,9 @@
               <td class="td-right">${{ $store.state.lifeInsurance }}</td>
             </tr>
             <tr>
-              <td class="td-left">Accidental Death & Dismemberment</td>
+              <td class="td-left">
+                Accidental Death & Dismemberment
+              </td>
               <td class="td-right">${{ $store.state.accidental }}</td>
             </tr>
             <tr>
@@ -89,23 +95,26 @@
               <td class="td-right">${{ $store.state.totalBenefits }}</td>
             </tr>
             <tr class="header-green">
-              <th class="td-left">Approximate Total Compensation</th>
+              <th class="td-left">
+                Approximate Total Compensation
+              </th>
               <td class="td-right">
                 ${{ $store.state.totalSalaryAndBenefits }}
               </td>
             </tr>
-            <div>{{ this.$route.params }} {{ pieData }}</div>
           </table>
 
           <div class="pie-chart doc-body-right">
             <center>
-              <pie-chart :chartdata="chartData"></pie-chart>
+              <pie-chart></pie-chart>
             </center>
           </div>
         </div>
         <div class="doc-body-end">
           <div class="doc-end">
-            <h3>Additional benefits not quantified but part of package:</h3>
+            <h3>
+              Additional benefits not quantified but part of package:
+            </h3>
             <div class="add-benefits-check">
               <li>
                 Sick Leave - for accrual rate visit
@@ -127,9 +136,13 @@
                 >
               </li>
             </div>
-            <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
+            <li>
+              Supplemental Retirement Offerings (403(b), 457(b) plans)
+            </li>
             <div class="add-benefits-check">
-              <li>Adoption Assistance - Up to $4,000 per child</li>
+              <li>
+                Adoption Assistance - Up to $4,000 per child
+              </li>
               <li>Employee Assistance Program</li>
               <li>Engage Healthcare Transparency Tool</li>
               <li>Family Medical Leave</li>
@@ -145,9 +158,13 @@
             <li>
               Flexible Spending Accounts (Healthcare and Dependent Daycare)
             </li>
-            <li>Onsite Fitness Center & Onsite Health Management Screenings</li>
+            <li>
+              Onsite Fitness Center & Onsite Health Management Screenings
+            </li>
             <li>Short-Term Disability</li>
-            <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
+            <li>
+              Supplemental Life Insurance: Employee, Spouse & Dependent
+            </li>
             <br />
             <center>
               <li>
@@ -163,7 +180,7 @@
 </template>
 
 <script>
-import PieChart from '../components/PieChart.vue';
+import PieChart from '../components/PieChart.vue'
 
 export default {
   components: {
@@ -172,25 +189,8 @@ export default {
   props: {
     //id: String,
     //name: String
-  },
-  data() {
-    return {
-      benefits: this.$route.params,
-      chartData: {
-        labels: ['Salary', 'Benefits'],
-        datasets: [
-          {
-            data: [20, 10],
-            backgroundColor: ['#026937', '#cea052'],
-            label: 'Dataset 1'
-          }
-        ]
-      }
-
-      //:salary="$store.state.Total Income" :benefit="pieData"
-    };
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

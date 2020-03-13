@@ -1,15 +1,19 @@
 <script>
-import { Doughnut } from 'vue-chartjs';
-
+import { Doughnut } from 'vue-chartjs'
 export default {
   extends: Doughnut,
-  props: {
-    chartdata: {
-      type: Object,
-      default: null
-    }
-  },
+
   data: () => ({
+    chartdata: {
+      labels: ['Salary', 'Benefits'],
+      datasets: [
+        {
+          data: ['20', '10'],
+          backgroundColor: ['#026937', '#cea052'],
+          label: 'Dataset 1'
+        }
+      ]
+    },
     options: {
       responsive: true,
       maintainAspectRatio: false,
@@ -40,9 +44,9 @@ export default {
     }
   }),
   mounted() {
-    this.renderChart(this.chartdata, this.options);
+    this.renderChart(this.chartdata, this.options)
   }
-};
+}
 </script>
 
 <style>
