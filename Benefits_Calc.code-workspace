@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "D:\\Web_Dev\\benefits_calc_back_end"
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "vetur.validation.template": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  }
+}

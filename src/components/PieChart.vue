@@ -1,18 +1,16 @@
 <script>
-import { Doughnut } from "vue-chartjs";
-
-
+import { Doughnut } from 'vue-chartjs'
 export default {
   extends: Doughnut,
-  
+
   data: () => ({
     chartdata: {
-      labels: ["Salary", "Benefits"],
+      labels: ['Salary', 'Benefits'],
       datasets: [
         {
-          data: ['.5', 'test'],
-          backgroundColor: ["#026937", "#cea052"],
-          label: "Dataset 1"
+          data: ['20', '10'],
+          backgroundColor: ['#026937', '#cea052'],
+          label: 'Dataset 1'
         }
       ]
     },
@@ -20,15 +18,15 @@ export default {
       responsive: true,
       maintainAspectRatio: false,
       legend: {
-        position: "top",
+        position: 'top',
         labels: {
           fontSize: 15 // Where font size for lables is set (need to figure a way to dynamically set this)
         }
       },
       title: {
         display: true,
-        position: "top",
-        text: "Total Compensation",
+        position: 'top',
+        text: 'Total Compensation',
         fontSize: 20 // Where font size for the title is set (need to figure a way to dynamically set this)
       },
       animation: {
@@ -46,9 +44,9 @@ export default {
     }
   }),
   mounted() {
-    this.renderChart(this.chartdata, this.options);
+    this.renderChart(this.chartdata, this.options)
   }
-};
+}
 </script>
 
 <style>
