@@ -19,7 +19,9 @@
               staff (.75FTE or Greater)
               <br />
             </span>
-            <span style="color:#026937">Estimate & Illustrative of Approximate Salary</span>
+            <span style="color:#026937"
+              >Estimate & Illustrative of Approximate Salary</span
+            >
           </div>
         </div>
         <div class="doc-body-mid">
@@ -29,69 +31,72 @@
             </tr>
             <tr>
               <td class="td-left">Base Salary</td>
-              <td class="td-right">${{benefits['Base Salary']}}</td>
+              <td class="td-right">${{ $store.state.baseSalary }}</td>
             </tr>
             <tr>
               <td class="td-left">Total Salary</td>
-              <td class="td-right">${{benefits['Total Income']}}</td>
+              <td class="td-right">${{ $store.state.totalIncome }}</td>
             </tr>
             <tr class="header-orange">
               <th class="td-left" colspan="2">Benefits (WSU paid)</th>
             </tr>
             <tr>
-              <td class="td-left">{{benefits['Medical']}}</td>
-              <td class="td-right">${{benefits['MedAmt']}}</td>
+              <td class="td-left">{{ $store.state.medical }}</td>
+              <td class="td-right">${{ $store.state.medAmt }}</td>
             </tr>
             <tr>
-              <td class="td-left">{{benefits['Dental']}}</td>
-              <td class="td-right">${{benefits['DentAmt']}}</td>
+              <td class="td-left">{{ $store.state.dental }}</td>
+              <td class="td-right">${{ $store.state.dentAmt }}</td>
             </tr>
             <tr>
-              <td class="td-left">{{benefits['Vision']}}</td>
-              <td class="td-right">${{benefits['VisnAmt']}}</td>
+              <td class="td-left">{{ $store.state.vision }}</td>
+              <td class="td-right">${{ $store.state.visnAmt }}</td>
             </tr>
             <tr>
               <td class="td-left">Retirement</td>
-              <td class="td-right">${{benefits['Retirement']}}</td>
+              <td class="td-right">${{ $store.state.retirement }}</td>
             </tr>
             <tr>
               <td class="td-left">Health Savings Accounts (HSA)</td>
-              <td class="td-right">${{benefits['HSA Amt']}}</td>
+              <td class="td-right">${{ $store.state.hsaAmt }}</td>
             </tr>
             <tr>
               <td class="td-left">Life Insurance</td>
-              <td class="td-right">${{benefits['Life Insurance']}}</td>
+              <td class="td-right">${{ $store.state.lifeInsurance }}</td>
             </tr>
             <tr>
               <td class="td-left">Accidental Death & Dismemberment</td>
-              <td class="td-right">${{benefits['Accidental']}}</td>
+              <td class="td-right">${{ $store.state.accidental }}</td>
             </tr>
             <tr>
               <td class="td-left">Long Term Disability</td>
-              <td class="td-right">${{benefits['Long Term Disb']}}</td>
+              <td class="td-right">${{ $store.state.longTermDisb }}</td>
             </tr>
             <tr>
               <td class="td-left">Medicare</td>
-              <td class="td-right">${{benefits['Medicare']}}</td>
+              <td class="td-right">${{ $store.state.medicare }}</td>
             </tr>
             <tr>
               <td class="td-left">Holidays (10 days)</td>
-              <td class="td-right">${{benefits['Holidays']}}</td>
+              <td class="td-right">${{ $store.state.holidays }}</td>
             </tr>
             <tr>
               <td class="td-left">Winter Leave (2 days)</td>
-              <td class="td-right">${{benefits['Winter Leave']}}</td>
+              <td class="td-right">${{ $store.state.winterLeave }}</td>
             </tr>
             <tr>
               <th class="td-left">Approximate Total Benefits</th>
-              <td class="td-right">${{benefits['Total Benefits']}}</td>
+              <td class="td-right">${{ $store.state.totalBenefits }}</td>
             </tr>
             <tr class="header-green">
               <th class="td-left">Approximate Total Compensation</th>
-              <td class="td-right">${{benefits['Total Salary and Benefits']}}</td>
+              <td class="td-right">
+                ${{ $store.state.totalSalaryAndBenefits }}
+              </td>
             </tr>
-            <div>{{ this.$route.params }} {{pieData}}</div>
+            <div>{{ this.$route.params }} {{ pieData }}</div>
           </table>
+
           <div class="pie-chart doc-body-right">
             <center>
               <pie-chart :chartdata="chartData"></pie-chart>
@@ -107,15 +112,19 @@
                 <a
                   href="htps://policy.wright.edu/policy/8420-sick-leave"
                   target="_blank"
-                >Sick Leave Policy</a>
+                  >Sick Leave Policy</a
+                >
               </li>
-              <li>Tuition Remission: Employee 100%, Spouses and Dependents 80%</li>
+              <li>
+                Tuition Remission: Employee 100%, Spouses and Dependents 80%
+              </li>
               <li>
                 Vacation - for accrual rate visit
                 <a
                   href="htps://policy.wright.edu/policy/8410-vacation"
                   target="_blank"
-                >Vacation Policy</a>
+                  >Vacation Policy</a
+                >
               </li>
             </div>
             <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
@@ -133,7 +142,9 @@
               <li>Tobacco-Free Campus</li>
               <li>Volunteer Opportunities</li>
             </div>
-            <li>Flexible Spending Accounts (Healthcare and Dependent Daycare)</li>
+            <li>
+              Flexible Spending Accounts (Healthcare and Dependent Daycare)
+            </li>
             <li>Onsite Fitness Center & Onsite Health Management Screenings</li>
             <li>Short-Term Disability</li>
             <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
@@ -152,32 +163,32 @@
 </template>
 
 <script>
-import PieChart from "../components/PieChart.vue";
+import PieChart from '../components/PieChart.vue';
 
 export default {
   components: {
-    "pie-chart": PieChart
+    'pie-chart': PieChart
+  },
+  props: {
+    //id: String,
+    //name: String
   },
   data() {
     return {
       benefits: this.$route.params,
       chartData: {
-        labels: ["Salary", "Benefits"],
+        labels: ['Salary', 'Benefits'],
         datasets: [
           {
             data: [20, 10],
-            backgroundColor: ["#026937", "#cea052"],
-            label: "Dataset 1"
+            backgroundColor: ['#026937', '#cea052'],
+            label: 'Dataset 1'
           }
         ]
       }
 
-      //:salary="benefits['Total Income']" :benefit="pieData"
+      //:salary="$store.state.Total Income" :benefit="pieData"
     };
-  },
-  props: {
-    id: String,
-    name: String
   }
 };
 </script>
@@ -350,7 +361,7 @@ li {
 }
 
 .add-benefits-check li:before {
-  content: "✓  ";
+  content: '✓  ';
   font-weight: bold;
   padding-right: 0.25em;
 }
