@@ -26,8 +26,8 @@ export default {
     return {
       input: {
         username: '',
-        password: ''
-      }
+        password: '',
+      },
     }
   },
   methods: {
@@ -35,14 +35,14 @@ export default {
       if (this.input.username != '' && this.input.password != '') {
         BenefitsService.checkAuthorization(
           this.input.username,
-          this.input.password
+          this.input.password,
         ).then(auth => {
           console.log(auth.data)
           if (auth.data != '') {
             BenefitsService.getBenefits(auth.data).then(response => {
               this.$store.dispatch('setBenefits', response.data)
               this.$router.replace({
-                name: 'BenefitsComponent'
+                name: 'BenefitsComponent',
               })
             })
           } else {
@@ -52,8 +52,8 @@ export default {
       } else {
         console.log('A username and password must be present')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
