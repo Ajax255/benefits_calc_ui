@@ -38,9 +38,7 @@
               <td class="td-right">${{ $store.state.totalIncome }}</td>
             </tr>
             <tr class="header-orange">
-              <th class="td-left" colspan="2">
-                Benefits (WSU paid)
-              </th>
+              <th class="td-left" colspan="2">Benefits (WSU paid)</th>
             </tr>
             <tr>
               <td class="td-left">{{ $store.state.medical }}</td>
@@ -59,9 +57,7 @@
               <td class="td-right">${{ $store.state.retirement }}</td>
             </tr>
             <tr>
-              <td class="td-left">
-                Health Savings Accounts (HSA)
-              </td>
+              <td class="td-left">Health Savings Accounts (HSA)</td>
               <td class="td-right">${{ $store.state.hsaAmt }}</td>
             </tr>
             <tr>
@@ -69,9 +65,7 @@
               <td class="td-right">${{ $store.state.lifeInsurance }}</td>
             </tr>
             <tr>
-              <td class="td-left">
-                Accidental Death & Dismemberment
-              </td>
+              <td class="td-left">Accidental Death & Dismemberment</td>
               <td class="td-right">${{ $store.state.accidental }}</td>
             </tr>
             <tr>
@@ -95,9 +89,7 @@
               <td class="td-right">${{ $store.state.totalBenefits }}</td>
             </tr>
             <tr class="header-green">
-              <th class="td-left">
-                Approximate Total Compensation
-              </th>
+              <th class="td-left">Approximate Total Compensation</th>
               <td class="td-right">
                 ${{ $store.state.totalSalaryAndBenefits }}
               </td>
@@ -106,15 +98,17 @@
 
           <div class="pie-chart doc-body-right">
             <center>
-              <pie-chart></pie-chart>
+              <PieChart
+                v-if="loaded"
+                :chartdata="chartdata"
+                :options="options"
+              ></PieChart>
             </center>
           </div>
         </div>
         <div class="doc-body-end">
           <div class="doc-end">
-            <h3>
-              Additional benefits not quantified but part of package:
-            </h3>
+            <h3>Additional benefits not quantified but part of package:</h3>
             <div class="add-benefits-check">
               <li>
                 Sick Leave - for accrual rate visit
@@ -136,13 +130,9 @@
                 >
               </li>
             </div>
-            <li>
-              Supplemental Retirement Offerings (403(b), 457(b) plans)
-            </li>
+            <li>Supplemental Retirement Offerings (403(b), 457(b) plans)</li>
             <div class="add-benefits-check">
-              <li>
-                Adoption Assistance - Up to $4,000 per child
-              </li>
+              <li>Adoption Assistance - Up to $4,000 per child</li>
               <li>Employee Assistance Program</li>
               <li>Engage Healthcare Transparency Tool</li>
               <li>Family Medical Leave</li>
@@ -158,13 +148,9 @@
             <li>
               Flexible Spending Accounts (Healthcare and Dependent Daycare)
             </li>
-            <li>
-              Onsite Fitness Center & Onsite Health Management Screenings
-            </li>
+            <li>Onsite Fitness Center & Onsite Health Management Screenings</li>
             <li>Short-Term Disability</li>
-            <li>
-              Supplemental Life Insurance: Employee, Spouse & Dependent
-            </li>
+            <li>Supplemental Life Insurance: Employee, Spouse & Dependent</li>
             <br />
             <center>
               <li>
@@ -183,13 +169,65 @@
 import PieChart from '../components/PieChart.vue'
 
 export default {
-  components: {
-    'pie-chart': PieChart
+  name: 'PieChartContainer',
+  components: { PieChart },
+  data: function() {
+    return {
+      loaded: false,
+      chartdata: null,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        tooltipTemplate: '<%= value %>',
+        legend: {
+          position: 'top',
+          labels: {
+            fontSize: 15, // Where font size for lables is set (need to figure a way to dynamically set this)
+          },
+        },
+        title: {
+          display: true,
+          position: 'top',
+          text: 'Total Compensation',
+          fontSize: 20, // Where font size for the title is set (need to figure a way to dynamically set this)
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true,
+        },
+        layout: {
+          padding: {
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 40,
+          },
+        },
+      },
+    }
   },
-  props: {
-    //id: String,
-    //name: String
-  }
+  mounted() {
+    this.loaded = false
+    try {
+      var json = {
+        labels: ['Salary', 'Benefits'],
+        datasets: [
+          {
+            data: [
+              parseFloat(this.$store.state.totalBenefits.replace(',', '')),
+              parseFloat(this.$store.state.totalIncome.replace(',', '')),
+            ],
+            backgroundColor: ['#026937', '#cea052'],
+            label: 'Dataset 1',
+          },
+        ],
+      }
+      this.chartdata = json
+      this.loaded = true
+    } catch (e) {
+      console.error(e)
+    }
+  },
 }
 </script>
 
