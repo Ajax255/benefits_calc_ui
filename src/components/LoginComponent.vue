@@ -1,19 +1,35 @@
 <template>
-  <div id="login">
-    <h1>Login</h1>
-    <input
-      v-model="input.username"
-      type="text"
-      name="username"
-      placeholder="Username"
-    />
-    <input
-      v-model="input.password"
-      type="password"
-      name="p assword"
-      placeholder="Password"
-    />
-    <button type="button" @click="login()">Login</button>
+  <div class="wrapper">
+    <div id="login">
+      <div class="ws_logo">
+        <center>
+          <img src="../assets/23_WRIGHTSTATE_BIPLANE_N_REV.png" class="logo" />
+        </center>
+      </div>
+      <center>
+        <h1>Login:</h1>
+      </center>
+      <center>
+        <input
+          v-model="input.username"
+          type="text"
+          name="username"
+          placeholder="Username"
+        />
+      </center>
+      <center>
+        <input
+          v-model="input.password"
+          type="password"
+          name="password"
+          placeholder="Password"
+        />
+      </center>
+      <br />
+      <center>
+        <button type="button" @click="login()">Login</button>
+      </center>
+    </div>
   </div>
 </template>
 
@@ -58,12 +74,51 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+  font-size: 25px;
+}
+.wrapper {
+  height: auto;
+  background-color: #fff;
+}
 #login {
   width: 500px;
-  border: 1px solid #cccccc;
-  background-color: #ffffff;
+  border: 0px;
+  background-color: #146a37;
   margin: auto;
   margin-top: 200px;
   padding: 20px;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 0.75rem #bababa);
+}
+input[type='text'],
+select,
+textarea {
+  border-radius: 10px;
+  width: 70%;
+  margin-bottom: 12px;
+  height: 25px;
+}
+input[type='password'],
+select,
+textarea {
+  border-radius: 10px;
+  width: 70%;
+  margin-bottom: 10px;
+  height: 25px;
+}
+input[type='button'] {
+  background-color: #000;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.logo {
+  width: 45%;
+  height: auto;
 }
 </style>
