@@ -7,7 +7,7 @@
         </center>
       </div>
       <center>
-        <h1>Login:</h1>
+        <h1>Employee Benefits Login:</h1>
       </center>
       <center>
         <input
@@ -77,14 +77,14 @@ export default {
 h1 {
   color: #ffffff;
   font-family: 'Georgia', serif;
-  font-size: 25px;
+  font-size: 17px;
 }
 .wrapper {
   height: auto;
   background-color: #fff;
 }
 #login {
-  width: 500px;
+  width: 45%;
   border: 0px;
   background-color: #146a37;
   margin: auto;
@@ -97,7 +97,7 @@ input[type='text'],
 select,
 textarea {
   border-radius: 10px;
-  width: 70%;
+  width: 60%;
   margin-bottom: 12px;
   height: 25px;
 }
@@ -105,20 +105,26 @@ input[type='password'],
 select,
 textarea {
   border-radius: 10px;
-  width: 70%;
-  margin-bottom: 10px;
+  width: 60%;
+  margin-bottom: 0px;
   height: 25px;
 }
-input[type='button'] {
-  background-color: #000;
-  color: white;
-  padding: 12px 20px;
+button[type='button'] {
+  background-color: #ffffff;
+  color: #146a37;
+  padding: 8px 20px;
   border: none;
-  border-radius: 4px;
+  font-family: 'Georgia', serif;
+  border-radius: 6px;
   cursor: pointer;
 }
+button[type='button']:hover {
+  background-color: #c3e8d2;
+}
+
 .logo {
   width: 45%;
   height: auto;
+  margin-bottom: 15px;
 }
 </style>
