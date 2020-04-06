@@ -5,8 +5,8 @@ const apiClient = axios.create({
   withCredentials: false,
   headers: {
     Acccept: 'application/json',
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 });
 
 export default {
@@ -15,5 +15,5 @@ export default {
   },
   getBenefits(name) {
     return apiClient.get('/api/v1/benefits/' + name);
-  }
+  },
 };

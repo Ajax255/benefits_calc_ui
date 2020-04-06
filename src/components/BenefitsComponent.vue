@@ -166,7 +166,7 @@
 </template>
 
 <script>
-import PieChart from '../components/PieChart.vue'
+import PieChart from '../components/PieChart.vue';
 
 export default {
   name: 'PieChartContainer',
@@ -204,10 +204,10 @@ export default {
           },
         },
       },
-    }
+    };
   },
   mounted() {
-    this.loaded = false
+    this.loaded = false;
     try {
       var json = {
         labels: ['Salary', 'Benefits'],
@@ -221,14 +221,14 @@ export default {
             label: 'Dataset 1',
           },
         ],
-      }
-      this.chartdata = json
-      this.loaded = true
+      };
+      this.chartdata = json;
+      this.loaded = true;
     } catch (e) {
-      console.error(e)
+      console.error(e);
     }
   },
-}
+};
 </script>
 
 <style scoped lang="scss">
