@@ -10,12 +10,12 @@ export default new Router({
     {
       path: '/benefits',
       name: 'BenefitsComponent',
-      component: Benefits
+      component: Benefits,
     },
     {
       path: '/',
       name: 'Login',
-      component: Login
-    }
-  ]
+      component: Login,
+    },
+  ],
 });
