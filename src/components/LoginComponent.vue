@@ -100,6 +100,13 @@ textarea {
   width: 60%;
   margin-bottom: 12px;
   height: 25px;
+  font-family: 'Times';
+  padding-left: 10px;
+  font-size: 17px;
+}
+::placeholder {
+  color: #146a37;
+  opacity: 0.35;
 }
 input[type='password'],
 select,
@@ -108,6 +115,9 @@ textarea {
   width: 60%;
   margin-bottom: 0px;
   height: 25px;
+  font-family: 'Times';
+  padding-left: 10px;
+  font-size: 17px;
 }
 button[type='button'] {
   background-color: #ffffff;
