@@ -31,67 +31,87 @@
             </tr>
             <tr>
               <td class="td-left">Base Salary</td>
-              <td class="td-right">${{ $store.state.baseSalary }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.baseSalary) }}
+              </td>
             </tr>
             <tr>
               <td class="td-left">Total Salary</td>
-              <td class="td-right">${{ $store.state.totalIncome }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.totalIncome) }}
+              </td>
             </tr>
             <tr class="header-orange">
               <th class="td-left" colspan="2">Benefits (WSU paid)</th>
             </tr>
             <tr>
               <td class="td-left">{{ $store.state.medical }}</td>
-              <td class="td-right">${{ $store.state.medAmt }}</td>
+              <td class="td-right">${{ formatPrice($store.state.medAmt) }}</td>
             </tr>
             <tr>
               <td class="td-left">{{ $store.state.dental }}</td>
-              <td class="td-right">${{ $store.state.dentAmt }}</td>
+              <td class="td-right">${{ formatPrice($store.state.dentAmt) }}</td>
             </tr>
             <tr>
               <td class="td-left">{{ $store.state.vision }}</td>
-              <td class="td-right">${{ $store.state.visnAmt }}</td>
+              <td class="td-right">${{ formatPrice($store.state.visnAmt) }}</td>
             </tr>
             <tr>
               <td class="td-left">Retirement</td>
-              <td class="td-right">${{ $store.state.retirement }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.retirement) }}
+              </td>
             </tr>
             <tr>
               <td class="td-left">Health Savings Accounts (HSA)</td>
-              <td class="td-right">${{ $store.state.hsaAmt }}</td>
+              <td class="td-right">${{ formatPrice($store.state.hsaAmt) }}</td>
             </tr>
             <tr>
               <td class="td-left">Life Insurance</td>
-              <td class="td-right">${{ $store.state.lifeInsurance }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.lifeInsurance) }}
+              </td>
             </tr>
             <tr>
               <td class="td-left">Accidental Death & Dismemberment</td>
-              <td class="td-right">${{ $store.state.accidental }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.accidental) }}
+              </td>
             </tr>
             <tr>
               <td class="td-left">Long Term Disability</td>
-              <td class="td-right">${{ $store.state.longTermDisb }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.longTermDisb) }}
+              </td>
             </tr>
             <tr>
               <td class="td-left">Medicare</td>
-              <td class="td-right">${{ $store.state.medicare }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.medicare) }}
+              </td>
             </tr>
             <tr>
               <td class="td-left">Holidays (10 days)</td>
-              <td class="td-right">${{ $store.state.holidays }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.holidays) }}
+              </td>
             </tr>
             <tr>
               <td class="td-left">Winter Leave (2 days)</td>
-              <td class="td-right">${{ $store.state.winterLeave }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.winterLeave) }}
+              </td>
             </tr>
             <tr>
               <th class="td-left">Approximate Total Benefits</th>
-              <td class="td-right">${{ $store.state.totalBenefits }}</td>
+              <td class="td-right">
+                ${{ formatPrice($store.state.totalBenefits) }}
+              </td>
             </tr>
             <tr class="header-green">
               <th class="td-left">Approximate Total Compensation</th>
               <td class="td-right">
-                ${{ $store.state.totalSalaryAndBenefits }}
+                ${{ formatPrice($store.state.totalSalaryAndBenefits) }}
               </td>
             </tr>
           </table>
@@ -113,7 +133,7 @@
               <li>
                 Sick Leave - for accrual rate visit
                 <a
-                  href="htps://policy.wright.edu/policy/8420-sick-leave"
+                  href="https://policy.wright.edu/policy/8420-sick-leave"
                   target="_blank"
                   >Sick Leave Policy</a
                 >
@@ -124,7 +144,7 @@
               <li>
                 Vacation - for accrual rate visit
                 <a
-                  href="htps://policy.wright.edu/policy/8410-vacation"
+                  href="https://policy.wright.edu/policy/8410-vacation"
                   target="_blank"
                   >Vacation Policy</a
                 >
@@ -166,10 +186,10 @@
 </template>
 
 <script>
-import PieChart from '../components/PieChart.vue';
+import PieChart from "../components/PieChart.vue";
 
 export default {
-  name: 'PieChartContainer',
+  name: "PieChartContainer",
   components: { PieChart },
   data: function() {
     return {
@@ -178,17 +198,17 @@ export default {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        tooltipTemplate: '<%= value %>',
+        tooltipTemplate: "<%= value %>",
         legend: {
-          position: 'top',
+          position: "top",
           labels: {
             fontSize: 15, // Where font size for lables is set (need to figure a way to dynamically set this)
           },
         },
         title: {
           display: true,
-          position: 'top',
-          text: 'Total Compensation',
+          position: "top",
+          text: "Total Compensation",
           fontSize: 20, // Where font size for the title is set (need to figure a way to dynamically set this)
         },
         animation: {
@@ -210,15 +230,15 @@ export default {
     this.loaded = false;
     try {
       var json = {
-        labels: ['Salary', 'Benefits'],
+        labels: ["Salary", "Benefits"],
         datasets: [
           {
             data: [
-              parseFloat(this.$store.state.totalBenefits.replace(',', '')),
-              parseFloat(this.$store.state.totalIncome.replace(',', '')),
+              parseFloat(this.$store.state.totalBenefits.replace(",", "")),
+              parseFloat(this.$store.state.totalIncome.replace(",", "")),
             ],
-            backgroundColor: ['#026937', '#cea052'],
-            label: 'Dataset 1',
+            backgroundColor: ["#026937", "#cea052"],
+            label: "Dataset 1",
           },
         ],
       };
@@ -227,6 +247,16 @@ export default {
     } catch (e) {
       console.error(e);
     }
+  },
+  methods: {
+    formatPrice(value) {
+      if (typeof value !== "number") {
+        return (parseInt(value.replace(",", "")) / 1)
+          .toFixed(2)
+          .replace(/\d(?=(\d{3})+\.)/g, "$&,");
+      }
+      return (value / 1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+    },
   },
 };
 </script>
@@ -399,7 +429,7 @@ li {
 }
 
 .add-benefits-check li:before {
-  content: '✓  ';
+  content: "✓  ";
   font-weight: bold;
   padding-right: 0.25em;
 }

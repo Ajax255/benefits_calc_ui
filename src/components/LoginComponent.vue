@@ -34,39 +34,39 @@
 </template>
 
 <script>
-import BenefitsService from '@/services/BenefitsService.js';
+import BenefitsService from "@/services/BenefitsService.js";
 
 export default {
-  name: 'Login',
+  name: "Login",
   data() {
     return {
       input: {
-        username: '',
-        password: '',
+        username: "",
+        password: "",
       },
     };
   },
   methods: {
     login() {
-      if (this.input.username != '' && this.input.password != '') {
+      if (this.input.username != "" && this.input.password != "") {
         BenefitsService.checkAuthorization(
           this.input.username,
-          this.input.password,
-        ).then(auth => {
+          this.input.password
+        ).then((auth) => {
           console.log(auth.data);
-          if (auth.data != '') {
-            BenefitsService.getBenefits(auth.data).then(response => {
-              this.$store.dispatch('setBenefits', response.data);
+          if (auth.data != "") {
+            BenefitsService.getBenefits(auth.data).then((response) => {
+              this.$store.dispatch("setBenefits", response.data);
               this.$router.replace({
-                name: 'BenefitsComponent',
+                name: "BenefitsComponent",
               });
             });
           } else {
-            console.log('The username and / or password is incorrect');
+            console.log("The username and / or password is incorrect");
           }
         });
       } else {
-        console.log('A username and password must be present');
+        console.log("A username and password must be present");
       }
     },
   },
@@ -76,7 +76,7 @@ export default {
 <style scoped>
 h1 {
   color: #ffffff;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   font-size: 17px;
 }
 .wrapper {
@@ -93,14 +93,14 @@ h1 {
   border-radius: 20px;
   filter: drop-shadow(0 0 0.75rem #bababa);
 }
-input[type='text'],
+input[type="text"],
 select,
 textarea {
   border-radius: 10px;
   width: 60%;
   margin-bottom: 12px;
   height: 25px;
-  font-family: 'Times';
+  font-family: "Times";
   padding-left: 10px;
   font-size: 17px;
 }
@@ -108,27 +108,27 @@ textarea {
   color: #146a37;
   opacity: 0.35;
 }
-input[type='password'],
+input[type="password"],
 select,
 textarea {
   border-radius: 10px;
   width: 60%;
   margin-bottom: 0px;
   height: 25px;
-  font-family: 'Times';
+  font-family: "Times";
   padding-left: 10px;
   font-size: 17px;
 }
-button[type='button'] {
+button[type="button"] {
   background-color: #ffffff;
   color: #146a37;
   padding: 8px 20px;
   border: none;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   border-radius: 6px;
   cursor: pointer;
 }
-button[type='button']:hover {
+button[type="button"]:hover {
   background-color: #c3e8d2;
 }
 
