@@ -28,7 +28,7 @@ function initialState() {
     winterLeave: "1",
     totalBenefits: "1",
     totalSalaryAndBenefits: "1",
-    pctBenToSal: "1",
+    pctBenToSal: "1"
   };
 }
 
@@ -43,9 +43,7 @@ export default new Vuex.Store({
       Object.assign(state, status);
     },
     SET_BENTFITS(state, status) {
-      console.log(status);
       state.name = status["Name"];
-      console.log(state.name);
       state.class = status["Class"];
       state.hourlyRate = status["Hourly Rate"];
       state.baseSalary = status["Base Salary"];
@@ -137,7 +135,7 @@ export default new Vuex.Store({
     },
     SET_PCT_BEN_TO_SAL(state, status) {
       state.pctBenToSal = status;
-    },
+    }
   },
   actions: {
     reset({ commit }) {
@@ -217,6 +215,6 @@ export default new Vuex.Store({
     },
     setPctBenToSal({ commit }, status) {
       commit("SET_PCT_BEN_TO_SAL", status);
-    },
-  },
+    }
+  }
 });

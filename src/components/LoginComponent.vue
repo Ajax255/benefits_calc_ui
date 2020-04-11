@@ -10,20 +10,10 @@
         <h1>Employee Benefits Login:</h1>
       </center>
       <center>
-        <input
-          v-model="input.username"
-          type="text"
-          name="username"
-          placeholder="Username"
-        />
+        <input v-model="input.username" type="text" name="username" placeholder="Username" />
       </center>
       <center>
-        <input
-          v-model="input.password"
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
+        <input v-model="input.password" type="password" name="password" placeholder="Password" />
       </center>
       <br />
       <center>
@@ -42,8 +32,8 @@ export default {
     return {
       input: {
         username: "",
-        password: "",
-      },
+        password: ""
+      }
     };
   },
   methods: {
@@ -52,13 +42,12 @@ export default {
         BenefitsService.checkAuthorization(
           this.input.username,
           this.input.password
-        ).then((auth) => {
-          console.log(auth.data);
+        ).then(auth => {
           if (auth.data != "") {
-            BenefitsService.getBenefits(auth.data).then((response) => {
+            BenefitsService.getBenefits(auth.data).then(response => {
               this.$store.dispatch("setBenefits", response.data);
               this.$router.replace({
-                name: "BenefitsComponent",
+                name: "BenefitsComponent"
               });
             });
           } else {
@@ -68,8 +57,8 @@ export default {
       } else {
         console.log("A username and password must be present");
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
