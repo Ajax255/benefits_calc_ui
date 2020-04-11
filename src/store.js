@@ -1,34 +1,34 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import createPersistedState from 'vuex-persistedstate';
+import Vue from "vue";
+import Vuex from "vuex";
+import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex);
 
 function initialState() {
   return {
-    name: '1',
-    class: '1',
-    hourlyRate: '1',
-    baseSalary: '1',
-    totalIncome: '1',
-    medical: '1',
-    medAmt: '1',
-    dental: '1',
-    dentAmt: '1',
-    vision: '1',
-    visnAmt: '1',
-    healthSavingsAccount: '1',
-    hsaAmt: '1',
-    retirement: '1',
-    lifeInsurance: '1',
-    accidental: '1',
-    longTermDisb: '1',
-    medicare: '1',
-    holidays: '1',
-    winterLeave: '1',
-    totalBenefits: '1',
-    totalSalaryAndBenefits: '1',
-    pctBenToSal: '1',
+    name: "1",
+    class: "1",
+    hourlyRate: "1",
+    baseSalary: "1",
+    totalIncome: "1",
+    medical: "1",
+    medAmt: "1",
+    dental: "1",
+    dentAmt: "1",
+    vision: "1",
+    visnAmt: "1",
+    healthSavingsAccount: "1",
+    hsaAmt: "1",
+    retirement: "1",
+    lifeInsurance: "1",
+    accidental: "1",
+    longTermDisb: "1",
+    medicare: "1",
+    holidays: "1",
+    winterLeave: "1",
+    totalBenefits: "1",
+    totalSalaryAndBenefits: "1",
+    pctBenToSal: "1",
   };
 }
 
@@ -44,30 +44,30 @@ export default new Vuex.Store({
     },
     SET_BENTFITS(state, status) {
       console.log(status);
-      state.name = status['Name'];
+      state.name = status["Name"];
       console.log(state.name);
-      state.class = status['Class'];
-      state.hourlyRate = status['Hourly Rate'];
-      state.baseSalary = status['Base Salary'];
-      state.totalIncome = status['Total Income'];
-      state.medical = status['Medical'];
-      state.medAmt = status['MedAmt'];
-      state.dental = status['Dental'];
-      state.dentAmt = status['DentAmt'];
-      state.vision = status['Vision'];
-      state.visnAmt = status['VisnAmt'];
-      state.healthSavingsAccount = status['Health Savings Account'];
-      state.hsaAmt = status['HSA Amt'];
-      state.retirement = status['Retirement'];
-      state.lifeInsurance = status['Life Insurance'];
-      state.accidental = status['Accidental'];
-      state.longTermDisb = status['Long Term Disb'];
-      state.medicare = status['Medicare'];
-      state.holidays = status['Holidays'];
-      state.winterLeave = status['Winter Leave'];
-      state.totalBenefits = status['Total Benefits'];
-      state.totalSalaryAndBenefits = status['Total Salary and Benefits'];
-      state.pctBenToSal = status['Pct Ben to Sal'];
+      state.class = status["Class"];
+      state.hourlyRate = status["Hourly Rate"];
+      state.baseSalary = status["Base Salary"];
+      state.totalIncome = status["Total Income"];
+      state.medical = status["Medical"];
+      state.medAmt = status["MedAmt"];
+      state.dental = status["Dental"];
+      state.dentAmt = status["DentAmt"];
+      state.vision = status["Vision"];
+      state.visnAmt = status["VisnAmt"];
+      state.healthSavingsAccount = status["Health Savings Account"];
+      state.hsaAmt = status["HSA Amt"];
+      state.retirement = status["Retirement"];
+      state.lifeInsurance = status["Life Insurance"];
+      state.accidental = status["Accidental"];
+      state.longTermDisb = status["Long Term Disb"];
+      state.medicare = status["Medicare"];
+      state.holidays = status["Holidays"];
+      state.winterLeave = status["Winter Leave"];
+      state.totalBenefits = status["Total Benefits"];
+      state.totalSalaryAndBenefits = status["Total Salary and Benefits"];
+      state.pctBenToSal = status["Pct Ben to Sal"];
     },
     SET_NAME(state, status) {
       state.name = status;
@@ -141,82 +141,82 @@ export default new Vuex.Store({
   },
   actions: {
     reset({ commit }) {
-      commit('RESET');
+      commit("RESET");
     },
     restore({ commit }, status) {
-      commit('RESTORE', status);
+      commit("RESTORE", status);
     },
     setBenefits({ commit }, status) {
-      commit('SET_BENTFITS', status);
+      commit("SET_BENTFITS", status);
     },
     setName({ commit }, status) {
-      commit('SET_NAME', status);
+      commit("SET_NAME", status);
     },
     setEmploymentStatus({ commit }, status) {
-      commit('SET_EMPLOYMENT_STATUS', status);
+      commit("SET_EMPLOYMENT_STATUS", status);
     },
     setHourlyRate({ commit }, status) {
-      commit('SET_HOURLY_RATE', status);
+      commit("SET_HOURLY_RATE", status);
     },
     setBaseSalary({ commit }, status) {
-      commit('SET_BASE_SALARY', status);
+      commit("SET_BASE_SALARY", status);
     },
     setTotalIncome({ commit }, status) {
-      commit('SET_TOTAL_INCOME', status);
+      commit("SET_TOTAL_INCOME", status);
     },
     setMedical({ commit }, status) {
-      commit('SET_MEDICAL', status);
+      commit("SET_MEDICAL", status);
     },
     setMedAmt({ commit }, status) {
-      commit('SET_MED_AMT', status);
+      commit("SET_MED_AMT", status);
     },
     setDental({ commit }, status) {
-      commit('SET_DENTAL', status);
+      commit("SET_DENTAL", status);
     },
     setDentAmt({ commit }, status) {
-      commit('SET_DENT_AMT', status);
+      commit("SET_DENT_AMT", status);
     },
     setVision({ commit }, status) {
-      commit('SET_VISION', status);
+      commit("SET_VISION", status);
     },
     setVisnAmt({ commit }, status) {
-      commit('SET_VISN_AMT', status);
+      commit("SET_VISN_AMT", status);
     },
     setHealthSavingsAccount({ commit }, status) {
-      commit('SET_HEALTH_SAVINGS_ACCOUNT', status);
+      commit("SET_HEALTH_SAVINGS_ACCOUNT", status);
     },
     setHsaAmt({ commit }, status) {
-      commit('SET_HSA_AMT', status);
+      commit("SET_HSA_AMT", status);
     },
     setRetirement({ commit }, status) {
-      commit('SET_RETIREMENT', status);
+      commit("SET_RETIREMENT", status);
     },
     setLifeInsurance({ commit }, status) {
-      commit('SET_LIFE_INSURANCE', status);
+      commit("SET_LIFE_INSURANCE", status);
     },
     setAccidental({ commit }, status) {
-      commit('SET_ACCIDENTAL', status);
+      commit("SET_ACCIDENTAL", status);
     },
     setLongTermDisb({ commit }, status) {
-      commit('SET_LONG_TERM_DISB', status);
+      commit("SET_LONG_TERM_DISB", status);
     },
     setMedicare({ commit }, status) {
-      commit('SET_MEDICARE', status);
+      commit("SET_MEDICARE", status);
     },
     setHolidays({ commit }, status) {
-      commit('SET_HOLIDAYS', status);
+      commit("SET_HOLIDAYS", status);
     },
     setWinterLeave({ commit }, status) {
-      commit('SET_WINTER_LEAVE', status);
+      commit("SET_WINTER_LEAVE", status);
     },
     setTotalBenefits({ commit }, status) {
-      commit('SET_TOTAL_BENEFITS', status);
+      commit("SET_TOTAL_BENEFITS", status);
     },
     setTotalSalaryAndBenefits({ commit }, status) {
-      commit('SET_TOTAL_SALARY_AND_BENEFITS', status);
+      commit("SET_TOTAL_SALARY_AND_BENEFITS", status);
     },
     setPctBenToSal({ commit }, status) {
-      commit('SET_PCT_BEN_TO_SAL', status);
+      commit("SET_PCT_BEN_TO_SAL", status);
     },
   },
 });
